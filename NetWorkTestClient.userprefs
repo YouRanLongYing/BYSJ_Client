@@ -1,0 +1,14 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/_Scripts/Test.cs">
+    <Files>
+      <File FileName="Assets/_Scripts/Test.cs" Line="105" Column="2" />
+      <File FileName="../../../Projects/mysqlTest/mysqlTest/Main.cs" Line="1" Column="1" />
+      <File FileName="Assets/_Scripts/loading.cs" Line="33" Column="7" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
