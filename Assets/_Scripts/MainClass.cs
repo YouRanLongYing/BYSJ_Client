@@ -9,19 +9,19 @@ using MyClient;
 using SimpleJSON;
 using UnityEngine;
 
-class MainClass : MonoBehaviour
+class MainClass : MonoBehaviour 
 {
 	static string cmd="";
 	public static void Main (string[] args)
 	{
 		Console.WriteLine ("Hello World!");
 //			IPAddress ep=IPAddress.Parse("127.0.0.1");
-		IPAddress ep=IPAddress.Parse("192.168.111.15");
+		IPAddress ep=IPAddress.Parse("127.0.0.1");
 		AsyncClient ac=new AsyncClient(new IPAddress[]{ ep},8421,null);
 
-		Console.WriteLine(ac.Connected.ToString());
+		Console.WriteLine(ac.Connected.ToString()); 
 		ac.DatagramReceived+=ProcessReceive;
-		ac.Connect();
+		//ac.Connect();
 		Console.WriteLine(ac.Connected.ToString());
 		ac.Send(System.Text.Encoding.UTF8.GetBytes( "Hello service!"));
 		Console.WriteLine(ac.Connected.ToString());

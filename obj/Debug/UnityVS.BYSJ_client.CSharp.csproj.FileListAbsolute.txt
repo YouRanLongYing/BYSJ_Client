@@ -1,0 +1,13 @@
+E:\BYSJ\BYSJ_client\Temp\UnityVS_bin\Debug\Assembly-CSharp.dll
+E:\BYSJ\BYSJ_client\Temp\UnityVS_bin\Debug\Assembly-CSharp.pdb
+E:\BYSJ\BYSJ_client\Temp\UnityVS_bin\Debug\UnityEditor.dll
+E:\BYSJ\BYSJ_client\Temp\UnityVS_bin\Debug\UnityEditor.iOS.Extensions.Xcode.dll
+E:\BYSJ\BYSJ_client\Temp\UnityVS_bin\Debug\UnityEngine.dll
+E:\BYSJ\BYSJ_client\Temp\UnityVS_bin\Debug\UnityEngine.UI.dll
+E:\BYSJ\BYSJ_client\obj\Debug\UnityVS.BYSJ_client.CSharp.csprojResolveAssemblyReference.cache
+E:\BYSJ\BYSJ_client\obj\Debug\Assembly-CSharp.dll
+E:\BYSJ\BYSJ_client\obj\Debug\Assembly-CSharp.pdb
+E:\BYSJ\BYSJ_client\Temp\UnityVS_bin\Debug\UnityEngine.xml
+E:\BYSJ\BYSJ_client\Temp\UnityVS_bin\Debug\UnityEditor.xml
+E:\BYSJ\BYSJ_client\Temp\UnityVS_bin\Debug\UnityEngine.UI.xml
+E:\BYSJ\BYSJ_client\Temp\UnityVS_bin\Debug\UnityEditor.iOS.Extensions.Xcode.xml

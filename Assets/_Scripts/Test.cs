@@ -12,21 +12,21 @@ using System.Text.RegularExpressions;
 public class Test : MonoBehaviour {
 	public GUIStyle gs;
 
-	public static string serverIP="192.168.111.125";
+	public static string serverIP="127.0.0.1";
 
 	string the_JSON_string="";
 	string cmd="";
 	static string msg="";
 	static System.Guid guid=System.Guid.NewGuid();
 	static Encrypt encrypt=new Encrypt();
-	public static AsyncClient ac;
+	public AsyncClient ac;
 
 	public JSONNode jsonData=JSON.Parse("{ \"version\": \"1.8.6\"}");
 	// Use this for initialization
 	void Start () {
 
-		
 
+        ac = NetClient.asyncClient;
 
 
 //		msg+=ac.Connected.ToString()+"\n";
@@ -45,18 +45,18 @@ public class Test : MonoBehaviour {
 
 	}
 
-	public static void ProcessReceive(object sender,AsyncEventArgs args)
-	{
-		if(args._sessions.ClientSocket.Connected)
-		{
-			if(msg.Length>=512)
-				msg="";
-			//msg+="source: "+Encoding.UTF8.GetString(encrypt.Decode( args._sessions.RecvDataBuffer))+"\n";
-			var N=JSON.Parse(Encoding.UTF8.GetString(encrypt.Decode( args._sessions.RecvDataBuffer)));
-			//msg+="Received from server: \n"+Regex.Unescape( JSON.GetStr( N["message"].ToString()))+"\n";
-			msg+=Regex.Unescape( JSON.GetStr( N["message"].ToString()))+"\n";
-		}
-	}
+    public static void ProcessReceive(object sender, AsyncEventArgs args)
+    {
+        if (args._sessions.ClientSocket.Connected)
+        {
+            if (msg.Length >= 512)
+                msg = "";
+            //msg+="source: "+Encoding.UTF8.GetString(encrypt.Decode( args._sessions.RecvDataBuffer))+"\n";
+            var N = JSON.Parse(Encoding.UTF8.GetString(encrypt.Decode(args._sessions.RecvDataBuffer)));
+            //msg+="Received from server: \n"+Regex.Unescape( JSON.GetStr( N["message"].ToString()))+"\n";
+            msg += Regex.Unescape(JSON.GetStr(N["message"].ToString())) + "\n";
+        }
+    }
 	
 
 	// Update is called once per frame
@@ -79,12 +79,14 @@ public class Test : MonoBehaviour {
 			else
 			{
 				jsonData["message"]=cmd;
+                //jsonData["sql"] = "use mycargame;select * from user where userId='1';";
 				ac.Send(encrypt.Encode( System.Text.Encoding.UTF8.GetBytes( jsonData.ToString())));
 				cmd="";
 			}
 		}
-		GUILayout.Label(ac.Connected.ToString(),gs);
+		GUILayout.Label(NetClient.asyncClient.Connected.ToString(),gs);
 		GUILayout.Label(msg,gs);
+        GUILayout.Label(NetClient.player.ToJson(NetClient.GetStandJson()).ToString());
 
 
 	}
