@@ -15,4 +15,10 @@ public enum MsgType {
     Room = 9,//房间信息
     Login_Response = 10,//登录的返回信息
     Player_Join = 11,//有玩家加入房间
+    RoomList=12,//请求获取房间列表
+    RoomList_Response=13,//请求房间信息的相应
+    CreateRoom=14,//创建房间
+    CreateRoom_Response=15,//响应创建房间
+    GetPlayers=16,//批量获取玩家信息
+    GetPlayers_Response=17,//批量获取玩家信息的响应
 }

@@ -21,7 +21,7 @@ public class NetClient {
     public static bool isConnected = false;
     public static AsyncClient asyncClient;
     static List<string> msg = new List<string>();
-    static Encrypt encrypt = new Encrypt();
+    public static Encrypt encrypt = new Encrypt();
     public static string currentVersion = "\"1.8.6\"";
     public static System.Guid clientId = System.Guid.NewGuid();
 
@@ -84,6 +84,12 @@ public class NetClient {
                         break;
                     case MsgType.WorldMsg:
                         //SendString2All(N["WorldMsg"].ToString());
+                        break;
+                    case MsgType.RoomList_Response:
+                        RoomList.Instance.GetRoomsResponse(N);
+                        break;
+                    case MsgType.CreateRoom_Response:
+                        RoomList.Instance.CreateRoom_Response(N);
                         break;
                     default: break;
                 }

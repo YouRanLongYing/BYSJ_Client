@@ -23,15 +23,23 @@ public class Login : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
+        if (NetClient.asyncClient==null)
+        {
+            IPAddress ep = IPAddress.Parse(NetClient.serverIP);
+            asyncClient = new AsyncClient(new IPAddress[] { ep }, 8421, null);
+            NetClient.asyncClient = asyncClient;
+            asyncClient.ServerConnected += NetClient.ProcessConnected;
+            asyncClient.ServerExceptionOccurred += NetClient.ProcessNetError;
+            asyncClient.ServerDisconnected += NetClient.ProcessNetError;
+            asyncClient.DatagramReceived += NetClient.ProcessReceive;
+            asyncClient.Connect();
+        }
+        else
+        {
+            NetClient.player = null;
+            NetClient.clientId = new Guid();
+        }
         
-        IPAddress ep = IPAddress.Parse(NetClient.serverIP);
-        asyncClient = new AsyncClient(new IPAddress[] { ep }, 8421, null);
-        NetClient.asyncClient = asyncClient;
-        asyncClient.ServerConnected += NetClient.ProcessConnected;
-        asyncClient.ServerExceptionOccurred += NetClient.ProcessNetError;
-        asyncClient.ServerDisconnected += NetClient.ProcessNetError;
-        asyncClient.DatagramReceived+=NetClient.ProcessReceive;
-        asyncClient.Connect();
 
         userName.text = "cc";
         password.text = "11";

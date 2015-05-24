@@ -50,6 +50,7 @@
      <Compile Include="Assets\_Scripts\BLL\currentClient.cs" />
      <Compile Include="Assets\_Scripts\Entity\MsgType.cs" />
      <Compile Include="Assets\_Scripts\Entity\Player.cs" />
+     <Compile Include="Assets\_Scripts\Entity\Room.cs" />
      <Compile Include="Assets\_Scripts\MainClass.cs" />
      <Compile Include="Assets\_Scripts\Network\AsyncClient.cs" />
      <Compile Include="Assets\_Scripts\Network\AsyncEventArgs.cs" />
@@ -59,7 +60,10 @@
      <Compile Include="Assets\_Scripts\Network\Session.cs" />
      <Compile Include="Assets\_Scripts\Network\SimpleJSON.cs" />
      <Compile Include="Assets\_Scripts\Test.cs" />
+     <Compile Include="Assets\_Scripts\UI\InRoom\CurrentRoom.cs" />
      <Compile Include="Assets\_Scripts\UI\Login\Login.cs" />
+     <Compile Include="Assets\_Scripts\UI\RoomList\RoomList.cs" />
+     <Compile Include="Assets\_Scripts\UI\RoomList\btnRoom.cs" />
      <Compile Include="Assets\_Scripts\UI\loading\LoaingUIMgr.cs" />
      <Compile Include="Assets\_Scripts\UI\loading\loadingUI.cs" />
      <None Include="Assets\StreamingAssets\JsonData.txt" />
